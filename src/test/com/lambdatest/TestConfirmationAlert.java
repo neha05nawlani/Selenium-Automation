@@ -1,22 +1,23 @@
 package com.lambdatest;
 
-import org.openqa.selenium.*;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.time.Duration;
 import java.util.List;
 
 public class TestConfirmationAlert extends BaseConfig {
 
     @Test
-    public void testConfirmationAlert() throws InterruptedException, MalformedURLException {
+    public void testConfirmationAlert() {
 
-        driver = new RemoteWebDriver(new URL(hubURL), capabilities);
+        WebDriver driver = getDriver();
 
         //Navigating to the website
         driver.get("https://www.lambdatest.com/selenium-playground/javascript-alert-box-demo");
@@ -28,7 +29,7 @@ public class TestConfirmationAlert extends BaseConfig {
             elements.get(1).click();
 
             // to let the alert be visible
-            WebDriverWait wait = new WebDriverWait(driver, 30);
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
             wait.until(ExpectedConditions.alertIsPresent());
 
             //Switch to the alert window

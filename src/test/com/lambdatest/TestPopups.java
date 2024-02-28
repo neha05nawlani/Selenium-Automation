@@ -2,20 +2,18 @@ package com.lambdatest;
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Set;
 
 public class TestPopups extends BaseConfig {
 
     @Test
-    public void testSuccessfulPopup() throws MalformedURLException {
-        driver = new RemoteWebDriver(new URL(hubURL), capabilities);
+    public void testSuccessfulPopup() {
+        WebDriver driver = getDriver();
 
         //Navigating to the website
         driver.get("https://www.lambdatest.com/selenium-playground/window-popup-modal-demo");
