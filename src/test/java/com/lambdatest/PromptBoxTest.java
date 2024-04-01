@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class TestPromptBox extends BaseConfig {
+public class PromptBoxTest extends BaseConfig {
 
     @Test
     public void testPromptBox() {
@@ -25,7 +25,6 @@ public class TestPromptBox extends BaseConfig {
         try {
 
             // Locate the button and click
-            Thread.sleep(3000);
             List<WebElement> elements = driver.findElements(By.xpath("//button[contains(text(),'Click Me')][1]"));
             elements.get(2).click();
 

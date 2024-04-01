@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.Set;
 
-public class TestPopups extends BaseConfig {
+public class PopupsTest extends BaseConfig {
 
     @Test
     public void testSuccessfulPopup() {
