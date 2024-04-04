@@ -1,6 +1,10 @@
-# Java-Selenium-Sample
-![Java](https://www.lambdatest.com/support/assets/images/og-images/Java-with-Selenium-1-1.jpg)
+# Alert and Poupus using Selenium on Lambda Test
 
+## What is this Repository about?
+
+- This repository showcases practical examples of handling alerts and popups encountered during web automation testing with Selenium WebDriver in Java.
+- Demonstrates techniques for interacting with different types of alerts (simple, confirm, prompt) and popups using Selenium APIs. 
+- This project uses Maven as build tool and TestNG framework to run the tests.
 ### Prerequisites
 1. Install and set environment variable for java.
     * Windows - https://www.oracle.com/java/technologies/downloads/
@@ -9,10 +13,7 @@
 2 Install and set environment varibale for Maven.
     * Windows - https://maven.apache.org/install.html
     * Linux/ MacOS -  [Homebrew](http://brew.sh/) (Easier)
-    ```
-     install maven
-    ```
-    
+
 ### Run your First Test
 1. Clone the Java-Selenium-Sample repository. 
 ```
@@ -35,14 +36,9 @@ set LT_ACCESS_KEY="YOUR ACCESS KEY"
 ```
 Step 3. You may also want to run the command below to check for outdated dependencies. Please be sure to verify and review updates before editing your pom.xml file as they may not be compatible with your code.
 ```
- mvn versions:display-dependency-updates
+mvn versions:display-dependency-updates
 ```
-Step 4. Run single test.
+Step 4. By default, tests would be running on LambdaTest Platform on Chrome and Firefox Browsers.
 ```
-mvn clean install exec:java -Dexec.mainClass="com.lambdatest.BasicAuthentication" -Dexec.classpathScope=test -e
+mvn clean test -DLT_USERNAME=<username> -DLT_ACCESS_KEY=<access-key> -Dtest=<class to be executed>
 ```
-
-## About LambdaTest
-
-[LambdaTest](https://www.lambdatest.com/) is a cloud based selenium grid infrastructure that can help you run automated cross browser compatibility tests on 2000+ different browser and operating system environments. LambdaTest supports all programming languages and frameworks that are supported with Selenium, and have easy integrations with all popular CI/CD platforms. It's a perfect solution to bring your [selenium automation testing](https://www.lambdatest.com/selenium-automation) to cloud based infrastructure that not only helps you increase your test coverage over multiple desktop and mobile browsers, but also allows you to cut down your test execution time by running tests on parallel.
-
